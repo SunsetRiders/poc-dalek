@@ -6,17 +6,17 @@ var app = express();
 
 // @index route
 app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname + '/../client/index.html'));
+    res.sendFile(path.join(__dirname + '/../client/index/index.html'));
 });
 
 // @index route
 app.get('/success', function(req, res) {
-    res.sendFile(path.join(__dirname + '/../client/success.html'));
+    res.sendFile(path.join(__dirname + '/../client/index/success.html'));
 });
 
 // @error route
 app.get('/success', function(req, res) {
-    res.sendFile(path.join(__dirname + '/../client/error.html'));
+    res.sendFile(path.join(__dirname + '/../client/index/error.html'));
 });
 
 
