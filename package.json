@@ -9,7 +9,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "dalekjs": "0.0.9"
+    "dalek-browser-phantomjs":"https://github.com/wrumsby/dalek-browser-phantomjs/tarball/b0b6c011eec55ea7da987461f6e1c79a6ab4bf6e",
+    "dalek-browser-chrome": "0.0.11",
+    "dalekjs": "0.0.9",
+    "phantomjs": "^2.1.7"
   },
   "dependencies": {
     "express": "^4.14.0"
