@@ -10,7 +10,7 @@
 | [browser] Chrome          | :heavy_check_mark:  | :heavy_check_mark:
 | [browser] Firefox         | :heavy_check_mark:  | :heavy_check_mark:
 | [browser] Phantom         | :heavy_check_mark:  | :heavy_check_mark:
-| [feat] Screenshot         | :heavy_check_mark:  | ISSUES
+| [feat] Screenshot         | :heavy_check_mark:  | :heavy_check_mark:
 | [feat] Custom tweaks      | :heavy_check_mark:  | TBD
 | [feat] Mocks / stubs      | :heavy_check_mark:  | no
 | [feat] Command line args  | :heavy_check_mark:  | TBD
@@ -21,6 +21,10 @@
 | [feat] TDD interface      | :heavy_check_mark:  | no
 | [feat] Object interface   | :heavy_check_mark:  | :heavy_check_mark:
 | [integration] CI-Codeship | :heavy_check_mark:  | TBD
+| [api][general][1] done()  | :heavy_check_mark:  | ISSUE
+
+
+
 
 ## Install
 ```sh
@@ -107,21 +111,44 @@ dalek <test-file-name> -r console,html -b chrome
 3. Pro for: "The intern" Browser
 
 ## ISSUES
-1. "Copying extracted folder":
+# [API][GENERAL][1]:
+  "done()"
   - User story:
-    Running "npm install dalek" downloads "phantomjs" npm package.
-    As it finishes, the npm tries to unpack the ".tar.gz" file at your "node_modules/" package but the CLI frozes
-    and the message "Copying extracted folder /tmp/phantomjs/phantomjs-1.9.8-linux-x86_64.tar.bz2-extract-1470071522030/phantomjs-1.9.8-linux-x86_64 ->"(...) remains.
+  Even when calling the "done()" function at the end of the tests, the CLI thinks that the done() function is not being called.
+  The output message at the every test after the first one is: ">> WARNING: done() not called before timeout!"
 
-  - Image: <dalek-bug.jpg>
+  - Image: <dalek-api-done()-bug.png>
 
-  - Google search: "dalek Copying extracted folder"
+  - Issue reference:
+  https://github.com/dalekjs/dalek-reporter-console/issues/4
+  https://github.com/dalekjs/dalek/issues/12
 
-  - Solution reference: https://github.com/dalekjs/dalek/issues/165
+  - Google search:
+
+  - Solution reference:
 
   - Solution:
-  The problem is with the "dalek-browser-phantomjs" package, the fix is already done in a fork but not already merged.
-  Add this to your "package.json" file:
-  ```json
-  "dalek-browser-phantomjs":"https://github.com/wrumsby/dalek-browser-phantomjs/tarball/b0b6c011eec55ea7da987461f6e1c79a6ab4bf6e"
-  ```
+
+
+
+# [PACKAGE][1]:
+  "Copying extracted folder"
+    - User story:
+      Running "npm install dalek" downloads "phantomjs" npm package.
+      As it finishes, the npm tries to unpack the ".tar.gz" file at your "node_modules/" package but the CLI frozes
+      and the message "Copying extracted folder /tmp/phantomjs/phantomjs-1.9.8-linux-x86_64.tar.bz2-extract-1470071522030/phantomjs-1.9.8-linux-x86_64 ->"(...) remains.
+
+    - Image: <dalek-bug.jpg>
+
+    - Issue reference:
+
+    - Google search: "dalek Copying extracted folder"
+
+    - Solution reference: https://github.com/dalekjs/dalek/issues/165
+
+    - Solution:
+    The problem is with the "dalek-browser-phantomjs" package, the fix is already done in a fork but not already merged.
+    Add this to your "package.json" file:
+    ```json
+    "dalek-browser-phantomjs":"https://github.com/wrumsby/dalek-browser-phantomjs/tarball/b0b6c011eec55ea7da987461f6e1c79a6ab4bf6e"
+    ```
