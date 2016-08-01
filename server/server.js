@@ -9,6 +9,17 @@ app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/../client/index.html'));
 });
 
+// @index route
+app.get('/success', function(req, res) {
+    res.sendFile(path.join(__dirname + '/../client/success.html'));
+});
+
+// @error route
+app.get('/success', function(req, res) {
+    res.sendFile(path.join(__dirname + '/../client/error.html'));
+});
+
+
 console.log("@server is running on port 8080");
 console.log("> visit http://localhost:8080");
 

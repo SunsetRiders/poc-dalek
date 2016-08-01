@@ -1,4 +1,8 @@
-## Comparisom
+# POC for Dalek.js
+> NOTE: Still under development
+
+## Comparison
+> TBD: To be discovered
 
 | Functional tests          | Intern              | Dalek
 ----------------------------|---------------------|-----------
